@@ -1,18 +1,30 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Home2 from "./pages/Home2/Home2";
-
+import { Navigate, Route, Routes } from "react-router-dom";
+// import { LanguageProvider } from "./contexts/Languagecontext";
 import ScrollToTop from "./ScrollToTop";
+import HomePage from "./pages/HomePage";
+import CollectedWorksPage from "./pages/CollectedWorksPage";
 
-const Router = () => {
+const AppRouter = () => {
   return (
     <ScrollToTop>
+      {/* <LanguageProvider> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/second" element={<Home2 />} />
+        {/* Redirect root to Serbian by default */}
+        <Route path="/" element={<Navigate to="/sr" replace />} />
+
+        {/* Language-specific routes */}
+        <Route path="/:lang" element={<HomePage />} />
+        <Route path="/:lang/maintenance" element={<HomePage />} />
+        <Route path="/:lang/gallery" element={<HomePage />} />
+        <Route path="/:lang/contact" element={<HomePage />} />
+        <Route path="/:lang/collected-works" element={<CollectedWorksPage />} />
+
+        {/* Catch-all route - redirect to Serbian */}
+        <Route path="*" element={<Navigate to="/sr" replace />} />
       </Routes>
+      {/* </LanguageProvider> */}
     </ScrollToTop>
   );
 };
 
-export default Router;
+export default AppRouter;
