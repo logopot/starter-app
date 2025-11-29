@@ -2,11 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavContainer = styled.nav`
-  background: linear-gradient(
-    135deg,
-    ${(props) => props.theme.colors.secondary} 0%,
-    ${(props) => props.theme.colors.primary} 100%
-  ) !important;
+  background: ${(props) => props.theme.colors.primary};
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
   transition: all 0.3s ease;

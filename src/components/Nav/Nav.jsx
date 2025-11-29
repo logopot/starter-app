@@ -36,28 +36,24 @@ const Nav = () => {
       path: "/collected-works",
       type: "page",
       label: t("navigation.collectedWorks"),
-      icon: "📚",
     },
     {
       key: "maintenance",
       path: "/maintenance",
       type: "section",
       label: t("navigation.maintenance"),
-      icon: "🔧",
     },
     {
       key: "gallery",
       path: "/gallery",
       type: "section",
       label: t("navigation.gallery"),
-      icon: "🖼️",
     },
     {
       key: "contact",
       path: "/contact",
       type: "section",
       label: t("navigation.contact"),
-      icon: "📞",
     },
     // Add more links here in the future...
   ];
@@ -144,7 +140,6 @@ const Nav = () => {
                     fontWeight: isActiveLink(link.path) ? "bold" : "normal",
                   }}
                 >
-                  {link.icon && <span className="me-2">{link.icon}</span>}
                   {link.label}
                 </NavLink>
               </li>
